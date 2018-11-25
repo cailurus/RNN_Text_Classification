@@ -5,6 +5,7 @@ import wget
 import os
 import pandas as pd
 import glob
+import jieba
 
 def download():
     print("downloading...")
@@ -33,9 +34,9 @@ def clean():
             sample_tags = sample[1].split("|")
             for tag_id in sample_tags:
                 tag_name = tags_dict[int(tag_id)]
-                f.write(sample_content+"\t"+tag_name+"\n")
+                f.write(" ".join(jieba.lcut(sample_content.replace(" ", "")))+"\t"+tag_name+"\n")
 
 
 if __name__ == "__main__":
-    download()
+    # download()
     clean()
