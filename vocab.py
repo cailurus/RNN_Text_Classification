@@ -37,11 +37,11 @@ class VocabBuilder(object):
         self.word_to_index = { tkn: i for i, tkn in enumerate([padding_marker, unknown_marker] + sorted(tokens)) }
         print('| Turncated vocab size:{} (removed:{})'.format(len(self.word_to_index), len(word_count) - len(self.word_to_index)))
 
-        # return self.word_to_index, None
-
-
 
 
 if __name__ == "__main__":
-    vocab_obj = VocabBuilder("./dataset/dataset.csv", min_sample=10)
+    vocab_obj = VocabBuilder("./dataset/dataset.csv", min_sample=1000)
     print(vocab_obj.filepath)
+
+    print(vocab_obj.word_to_index)
+    print(vocab_obj.label_to_index)
