@@ -3,6 +3,7 @@
 
 from vocab import VocabBuilder
 from dataloader import DataLoader
+from model import RNN
 
 
 filepath = "./dataset/dataset.csv"
