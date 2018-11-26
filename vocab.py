@@ -6,7 +6,7 @@ import utils
 from collections import Counter
 
 class VocabBuilder(object):
-    def __init__(self, filepath, min_sample=10):
+    def __init__(self, filepath, min_sample=3):
         self.filepath = filepath
         self.word_to_index = {}
         self.label_to_index = {}
